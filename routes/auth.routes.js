@@ -15,6 +15,7 @@ router.post(
   ],
   async (req, res) => {
     try {
+      console.log(req.body);
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res
@@ -22,7 +23,7 @@ router.post(
           .json({ errors: errors.array(), message: "The Data is wrong" });
       }
       const { email, password } = req.body;
-      const candidate = await User.findOne({ email: email });
+      const candidate = await User.findOne({ email });
       if (candidate) {
         res.status(400).json({ message: " The User exist" });
       }
@@ -60,6 +61,7 @@ router.post(
       if (!isMatch) {
         return res.status(400).json({ message: "pass is wrong, try again" });
       }
+
       const token = jwt.sign({ userId: user.id }, config.get("jwtSecret"), {
         expiresIn: "1h",
       });

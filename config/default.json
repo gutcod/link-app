@@ -1,5 +1,5 @@
 {
   "port": 5000,
-  "secret": "dsk8s7",
+  "jwtSecret": "dsk8s7",
   "mongoUri": "mongodb+srv://ag:1234ag@mern-app.bcnrx.azure.mongodb.net/<dbname>?retryWrites=true&w=majority"
 }
