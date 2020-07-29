@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
+import "./nav.style.css";
 
 export const NavBar = () => {
   const history = useHistory();
@@ -13,13 +14,13 @@ export const NavBar = () => {
   return (
     <nav>
       <div className="nav-wrapper cyan lighten-2" style={{ padding: "0 2rem" }}>
-        <span className="brand-logo">Link Shorter</span>
+        <span className="brand-logo logo">Link Shorter</span>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <NavLink to="/create">Create</NavLink>
           </li>
           <li>
-            <NavLink to="/links">Links</NavLink>
+            <NavLink to="/link">Links</NavLink>
           </li>
           <li>
             <a href="/" onClick={logoutHandler}>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHttp } from "../hooks/http.hook";
 import { useMessage } from "../hooks/message.hook";
 import { AuthContext } from "../context/auth.context";
+import "./auth.style.css";
 
 export const AuthPage = () => {
   const auth = useContext(AuthContext);
@@ -36,8 +37,8 @@ export const AuthPage = () => {
   return (
     <div className="row">
       <div className="col s6 offset-s3">
-        <h1>Short-Links</h1>
-        <div className="card blue darken-1">
+        <h1 className="logo">Link-Shorter</h1>
+        <div className="card cyan lighten-2">
           <div className="card-content white-text">
             <span className="card-title">Login In</span>
             <div>
@@ -69,7 +70,7 @@ export const AuthPage = () => {
           </div>
           <div className="card-action">
             <button
-              className="btn yellow darken-4"
+              className="btn amber darken-1"
               style={{ marginRight: 10 }}
               onClick={loginHandler}
               disabled={loading}
