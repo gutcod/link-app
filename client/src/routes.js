@@ -9,7 +9,7 @@ export const useRoutes = (isAuthenticated) => {
   if (isAuthenticated) {
     return (
       <Switch>
-        <Route path="/links" exact>
+        <Route path="/link" exact>
           <LinksPage />
         </Route>
         <Route path="/create" exact>
